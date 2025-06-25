@@ -3,13 +3,16 @@ import AllPatent from "./Components/AllPatent";
 import CreatePatent from "./Components/CreatePatent";
 import MyPatents from "./Components/MyPatents";
 import PatentDetails from "./Components/patentDetails";
-import { Routes, Route } from "react-router"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { Toaster } from "react-hot-toast";
 
 const App = () => {
 
   return (
+    <Router>
     <div className="h-screen bg-black">
+     
       <Navbar />
       <Routes>
         <Route path="/" element={<AllPatent />} />
@@ -33,7 +36,8 @@ const App = () => {
           },
         }}
       />
-    </div>
+      </div>
+      </Router>
   );
 };
 
