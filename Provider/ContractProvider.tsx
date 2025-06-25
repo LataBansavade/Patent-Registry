@@ -1,5 +1,6 @@
 import { Contract, BrowserProvider, JsonRpcProvider } from "ethers";
-import { useMemo, createContext, useContext, ReactNode, useState, useEffect } from "react";
+import {  createContext, useContext,  useState, useEffect } from "react";
+import type { ReactNode } from "react";
 import { useAccount } from "wagmi";
 import { CONTRACT_ADDRESS } from "../Frontend/Contract/contractAddress";
 import { PatentRegistryABI } from "../Frontend/Contract/PatentRegistry";
