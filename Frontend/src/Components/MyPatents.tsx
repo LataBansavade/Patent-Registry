@@ -43,6 +43,7 @@ const MyPatents = () => {
   const fetchMyPatents = async () => {
     if (!contract || !address || !isConnected) {
       setLoading(false);
+      toast.error("Please connect your wallet to view your patents");
       return;
     }
 
@@ -77,6 +78,14 @@ const MyPatents = () => {
   };
 
   useEffect(() => {
+    if (!isConnected || !address || !contract) {
+      setPatents([]);  // Clear patents when wallet disconnects
+      setLoading(false);
+      if (!isConnected) {
+        toast.error(" Please connect your wallet to view your patents");
+      }
+      return;
+    }
     fetchMyPatents();
   }, [contract, address, isConnected]);
 
@@ -182,14 +191,13 @@ const MyPatents = () => {
             
       const uploadRes = await fetch(
         "https://api.pinata.cloud/pinning/pinFileToIPFS",
-        {
-          method: "POST",
-          headers: {
-            'Authorization': `Bearer ${PINATA_JWT}`,
-           
-          },
-          body: formData,
-        }
+      {
+        method: "POST",
+        headers: {
+          'Authorization': `Bearer ${PINATA_JWT}`
+        },
+        body: formData,
+      }
       );
 
       if (!uploadRes.ok) {
