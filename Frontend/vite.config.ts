@@ -5,11 +5,12 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   server: {
-    historyApiFallback: true
+    // Vite handles SPA fallback automatically in production
   },
   build: {
     outDir: 'dist',
     rollupOptions: {
+      external: ['@reown/appkit/react'], // Add this line
       output: {
         manualChunks: {
           react: ['react', 'react-dom', 'react-router-dom'],
