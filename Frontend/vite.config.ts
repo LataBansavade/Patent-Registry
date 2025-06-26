@@ -14,17 +14,12 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       external: [
-        '@reown/appkit/react',
-        'ethers',
-        'ethers/providers',
-        'wagmi',
-        '@wagmi/core'
+        '@reown/appkit/react'
       ],
       output: {
         manualChunks: {
           react: ['react', 'react-dom', 'react-router-dom'],
-          ethers: ['ethers'],
-          wagmi: ['wagmi', '@wagmi/core']
+          wagmi: ['wagmi', '@wagmi/core', 'viem']
         }
       }
     }
