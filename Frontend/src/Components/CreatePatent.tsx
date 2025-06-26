@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { FiUpload, FiX, FiFile, FiLoader, FiCheckCircle, FiExternalLink, FiAlertCircle } from 'react-icons/fi';
-import { useContract } from '../../../Provider/ContractProvider';
+import { useContract } from '../Provider/ContractProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 

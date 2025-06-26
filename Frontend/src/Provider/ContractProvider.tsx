@@ -2,8 +2,8 @@ import { Contract, BrowserProvider, JsonRpcProvider } from "ethers";
 import {  createContext, useContext,  useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { useAccount } from "wagmi";
-import { CONTRACT_ADDRESS } from "../Frontend/Contract/contractAddress";
-import { PatentRegistryABI } from "../Frontend/Contract/PatentRegistry";
+import { CONTRACT_ADDRESS } from "../../Contract/contractAddress";
+import { PatentRegistryABI } from "../../Contract/PatentRegistry";
 
 // Sepolia RPC URL
 const SEPOLIA_RPC_URL ='https://sepolia.infura.io/v3/0396cb651a6841589f2f1e0b44f014a6';

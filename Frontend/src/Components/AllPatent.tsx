@@ -7,7 +7,7 @@ import {
   FiAlertCircle,
   FiCheckCircle,
 } from "react-icons/fi";
-import { useContract } from "../../../Provider/ContractProvider";
+import { useContract } from "../Provider/ContractProvider";
 import { formatDistanceToNow } from "date-fns";
 import toast, { Toaster } from "react-hot-toast";
 
