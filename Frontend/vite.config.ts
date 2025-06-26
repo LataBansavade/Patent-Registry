@@ -13,13 +13,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      external: [
-        '@reown/appkit/react'
-      ],
       output: {
         manualChunks: {
           react: ['react', 'react-dom', 'react-router-dom'],
-          wagmi: ['wagmi', '@wagmi/core', 'viem']
+          wagmi: ['wagmi', '@wagmi/core', 'viem'],
+          appkit: ['@reown/appkit', '@reown/appkit-adapter-wagmi']
         }
       }
     }
